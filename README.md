@@ -14,8 +14,7 @@ pip install pypollen
 
 ### Constructor
 
-`location` can be a UK postcode or city.
-#FIXME
+`latitude` and `longitude` have to be a set of coordinates in the UK.
 
 ```python
 Pollen(latitude,longitude)
@@ -31,6 +30,5 @@ pollencount # String with level of pollen
 
 ```python
 from pollen import Pollen
-
 print Pollen(51.7546407,-1.2510746).pollencount
 ```
