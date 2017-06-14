@@ -21,9 +21,8 @@ class Pollen(object):
         """Returns pollen count for requested location"""
 
         request = requests.get('https://socialpollencount.co.uk/api/forecast?location=[%s,%s]' % (self.latitude, self.longitude))
-        forecast = request.json()['forecast']
-
         if request.status_code == 200:
+            forecast = request.json()['forecast']
             try:
                 for counter, element in enumerate(forecast):
                     if today in element['date']:
