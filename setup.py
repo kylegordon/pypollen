@@ -4,7 +4,7 @@ setup(
     name='pollen',
     packages=['pollen'],
     version='0.1.0',
-    description='Provides an API for requesting information from Benadryl's Social Pollen Count (https://benadryl.co.uk/social-pollen-count/)',
+    description='Provides an API for requesting information from Benadryls Social Pollen Count (https://benadryl.co.uk/social-pollen-count/)',
     author='Kyle Gordon',
     author_email='kyle@glasgownet.com',
     url='https://github.com/kylegordon/pypollen',
