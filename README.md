@@ -29,6 +29,6 @@ pollencount # String with level of pollen
 ## Example
 
 ```python
-from pollen import Pollen
+from pypollen import Pollen
 print Pollen(51.7546407,-1.2510746).pollencount
 ```
