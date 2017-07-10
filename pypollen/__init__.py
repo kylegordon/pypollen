@@ -26,9 +26,9 @@ class Pollen(object):
             try:
                 for counter, element in enumerate(forecast):
                     if today in element['date']:
-                        todays_pollen_level = element['pollen_count']
-                        todays_temperature = element['temperature']
-                        todays_weather = element['weather']
+                        todays_pollen_level = element.get('pollen_count')
+                        todays_temperature = element.get('temperature')
+                        todays_weather = element.get('weather')
                         return todays_pollen_level
             except ValueError:
                 raise RuntimeError("Unexpected response")
