@@ -20,7 +20,14 @@ class Pollen(object):
     def pollencount(self):
         """Returns pollen count for requested location"""
 
-        request = requests.get('https://socialpollencount.co.uk/api/forecast?location=[%s,%s]' % (self.latitude, self.longitude))
+        try:
+            request = requests.get('https://socialpollencount.co.uk/api/forecast?location=[%s,%s]' % (self.latitude, self.longitude), timeout=3)
+        except requests.exceptions.Timeout:
+            print("socialpollencount.co.uk timed out")
+            raise RuntimeError("timeout")
+        else:
+            raise RuntimeError("Service failed")
+
         if request.status_code == 200:
             forecast = request.json()['forecast']
             try:
